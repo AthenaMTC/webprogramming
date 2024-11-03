@@ -1,5 +1,3 @@
-
-Naila Haliluddin
 <?php
 
 require_once('../tools/functions.php');
@@ -10,7 +8,7 @@ $codeErr = $nameErr = $categoryErr = $priceErr = $imageErr = '';
 
 $uploadDir = '../uploads/';
 $allowedType = ['jpg', 'jpeg', 'png'];
-$maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
+$maxFileSize = 5 * 1024 * 1024; 
 
 $productObj = new ProductImage();
 
@@ -55,7 +53,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $imageErr = 'File size must not exceed 5MB.';
     }
 
-    // If there are validation errors, return them as JSON
     if(!empty($codeErr) || !empty($nameErr) || !empty($categoryErr) || !empty($priceErr) || !empty($imageErr)){
         echo json_encode([
             'status' => 'error',
